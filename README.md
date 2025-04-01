@@ -14,7 +14,7 @@ DB_PASSWORD=postgres
 IMAGE_UPLOAD_TOKEN='yourTokenOfChoice'
 ```
 
-The `IMAGE_UPLOAD_TOKEN` enivornment variable will be used as our authorization token.
+The `IMAGE_UPLOAD_TOKEN` enivornment variable will be used as our authorization bearer token.
 
 3. Build and start the containers
 
