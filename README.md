@@ -53,6 +53,7 @@ The image upload endpoint is located at http://localhost:8000/api/upload and sho
   - `description` (required): Description for the image
 
 **Successful response**
+```
 {
     "message": "Image uploaded successfully",
     "data": {
@@ -64,8 +65,10 @@ The image upload endpoint is located at http://localhost:8000/api/upload and sho
         "file_path": "public/images/gAtx6yrVuoglrDmjwQF8cyWEeSASZDPVBPrIMgU0.png"
     }
 }
+```
 
 **Missing data response**
+```
 {
     "message": "Validation failed",
     "errors": {
@@ -74,15 +77,20 @@ The image upload endpoint is located at http://localhost:8000/api/upload and sho
         ]
     }
 }
+```
 
 **Unauthorized response**
+```
 {
     "error": "Unauthorized"
 }
+```
 
 
 ### TESTS
 
 A few tests are set up in tests/Unit/ImageUploadTest and can be run with the following command:
 
+```
 php artisan test
+```
