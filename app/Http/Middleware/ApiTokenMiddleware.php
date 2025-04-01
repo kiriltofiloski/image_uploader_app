@@ -15,7 +15,7 @@ class ApiTokenMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $token = $request->header('Authorization') ?? $request->query('token');
+        $token = $request->bearerToken();
         
         if ($token !== env('IMAGE_UPLOAD_TOKEN')) {
             return response()->json(['error' => 'Unauthorized'], 401);

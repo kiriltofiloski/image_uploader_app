@@ -23,7 +23,7 @@ class ImageUploadTest extends TestCase
             'title' => 'Test Image',
             'description' => 'Test Description'
         ], [
-            'Authorization' => env('IMAGE_UPLOAD_TOKEN')
+            'Authorization' => 'Bearer ' . env('IMAGE_UPLOAD_TOKEN')
         ]);
         
 
@@ -39,7 +39,7 @@ class ImageUploadTest extends TestCase
             'title' => 'Test Image',
             'description' => 'Test Description'
         ], [
-            'Authorization' => env('IMAGE_UPLOAD_TOKEN')
+            'Authorization' => 'Bearer ' . env('IMAGE_UPLOAD_TOKEN')
         ]);
 
         //Assertions
@@ -59,7 +59,7 @@ class ImageUploadTest extends TestCase
             'title' => 'Test Image',
             'description' => 'Test Description'
         ], [
-            'Authorization' => 'incorrect-token'
+            'Authorization' => 'Bearer incorrect-token'
         ]);
 
         // Assertions
