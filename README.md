@@ -14,22 +14,27 @@ DB_PASSWORD=postgres
 IMAGE_UPLOAD_TOKEN='yourTokenOfChoice'
 ```
 
-The "IMAGE_UPLOAD_TOKEN" enivornment variable will be used as our authorization token.
+The `IMAGE_UPLOAD_TOKEN` enivornment variable will be used as our authorization token.
 
 3. Build and start the containers
 
+```
 docker compose build
 docker compose up
+```
 
 4. Open a new terminal and enter your Laravel app's terminal
 
+```
 docker exec -it image_uploader /bin/bash
+```
 
 5. From this terminal run migrations and create storage link
 
+```
 php artisan migrate
 php artisan storage:link
-
+```
 
 
 
