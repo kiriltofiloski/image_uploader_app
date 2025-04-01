@@ -1,0 +1,4 @@
+# Ignore symlinks and problematic files
+public/storage
+vendor/
+.git/

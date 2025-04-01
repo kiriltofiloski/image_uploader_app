@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: image_uploader
+    build: .
+    volumes:
+      - .:/var/www  # For development only (remove for production)
+    working_dir: /var/www
+    networks:
+      - laravel-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - laravel-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www  # Sync with host for development
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - laravel-network
+
+volumes:
+  postgres_data:
+
+networks:
+  laravel-network:
+    driver: bridge
