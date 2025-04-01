@@ -4,19 +4,15 @@ This is a simple image uploading API made in Laravel 12
 1. Make sure you have Docker and Docker Compose installed
 2. Copy `.env.example` to `.env` and configure these enivronment variables:
 
+```
 DB_CONNECTION=pgsql
-
 DB_HOST=db
-
 DB_PORT=5432
-
 DB_DATABASE=image_storage
-
 DB_USERNAME=postgres
-
 DB_PASSWORD=postgres
-
 IMAGE_UPLOAD_TOKEN='yourTokenOfChoice'
+```
 
 The "IMAGE_UPLOAD_TOKEN" enivornment variable will be used as our authorization token.
 
